@@ -1,0 +1,7 @@
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.csproj.AssemblyReference.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\rpswa.dswa.cache.json
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.AssemblyInfoInputs.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.AssemblyInfo.cs
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.csproj.CoreCompileInputs.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\IdentityMicroService\obj\Debug\net9.0\IdentityMicroService.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,12 @@
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.deps.json
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.dll
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.pdb
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.csproj.AssemblyReference.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfoInputs.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfo.cs
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.csproj.CoreCompileInputs.cache
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.dll
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\refint\BlazorShared.dll
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.pdb
+C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\ref\BlazorShared.dll
