@@ -12,7 +12,7 @@ public class RegisterEndpoint:IEndpoint<IResult>
   public void AddRoute(IEndpointRouteBuilder app)
   {
       // IProductService can also be a repository or something else.
-      app.MapGet("/RegisterUser", async (RegisterRequest request) =>
+      app.MapGet("/RegisterUser", async (RegisterRequest_DTO request) =>
       {
                  // Create a new user entity from the request
             var user = new ApplicationUser
