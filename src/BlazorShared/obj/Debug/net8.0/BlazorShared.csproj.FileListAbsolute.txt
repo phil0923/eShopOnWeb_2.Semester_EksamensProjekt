@@ -10,3 +10,16 @@ C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorS
 C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\refint\BlazorShared.dll
 C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.pdb
 C:\Users\PPlet\Desktop\GitRepo\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\ref\BlazorShared.dll
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.deps.json
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.dll
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\bin\Debug\net8.0\BlazorShared.pdb
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.csproj.AssemblyReference.cache
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfoInputs.cache
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.AssemblyInfo.cs
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.csproj.CoreCompileInputs.cache
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.sourcelink.json
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.dll
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\refint\BlazorShared.dll
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\BlazorShared.pdb
+D:\GitHubRepos\eShopOnWeb_2.Semester_EksamensProjekt\src\BlazorShared\obj\Debug\net8.0\ref\BlazorShared.dll

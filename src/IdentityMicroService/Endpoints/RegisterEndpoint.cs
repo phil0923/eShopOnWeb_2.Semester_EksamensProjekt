@@ -1,40 +1,48 @@
  
+using Microsoft.AspNetCore.Identity;   // for UserManager & IdentityRole
+using IdentityMicroService.DTOs;
+using IdentityMicroService.Identity;
+using IdentityMicroService;
+using Microsoft.AspNetCore.Mvc;
+
 namespace IdentityMicroService
-public class RegisterEndpoint:IEndpoint<IResult>
 {
-    private readonly UserManager<ApplicationUser> _userManager;
-
-    public RegisterEndpoint(UserManager<ApplicationUser> userManager)
+    public class RegisterEndpoint:IEndpoint<IResult>
     {
-        _userManager = userManager;
-    }
+      
 
-  public void AddRoute(IEndpointRouteBuilder app)
-  {
-      // IProductService can also be a repository or something else.
-      app.MapGet("/RegisterUser", async (RegisterRequest_DTO request) =>
-      {
+        public void AddRoute(IEndpointRouteBuilder app)
+        {
+            // IProductService can also be a repository or something else.
+            app.MapPost("/register", async (
+                [FromBody] RegisterRequest_DTO request,
+                [FromServices] UserManager<ApplicationUser> userManager) =>
+             {
                  // Create a new user entity from the request
-            var user = new ApplicationUser
-            {
+                var user = new ApplicationUser
+                {
                 UserName = request.Username,
                 Email = request.Email,
-                Name = request.FullName // your custom property
-            };
+                };
 
-            // CreateAsync will insert into AspNetUsers (via IdentityDbContext)
-            var result = await _userManager.CreateAsync(user, request.Password);
+             // CreateAsync will insert into AspNetUsers (via IdentityDbContext)
+                var result = await userManager.CreateAsync(user, request.Password);
 
-            if (result.Succeeded)
-            {
-                return Results.Ok(new { message = "User registered successfully" });
-            }
+                if (result.Succeeded)
+                {
+                    // Assign default role, e.g., "Customer"
+                    await userManager.AddToRoleAsync(user, BlazorShared.Authorization.Constants.Roles.CUSTOMERS);
+                    return Results.Ok(new { message = "User registered successfully" });
+                }
+                  
+                  await userManager.AddToRoleAsync(user, BlazorShared.Authorization.Constants.Roles.CUSTOMERS);
 
-            // If there are validation errors (weak password, duplicate email, etc.)
-            return Results.BadRequest(result.Errors);
+                // If there are validation errors (weak password, duplicate email, etc.)
+                return Results.BadRequest(result.Errors);
         
-      });
+            });
 
       
-  }
+        }
+    }
 }

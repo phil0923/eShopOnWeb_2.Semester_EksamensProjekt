@@ -548,23 +548,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PPlet\\.nuget\\packages\\": {},
+    "C:\\Users\\Henrik Hansen\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+      "projectUniqueName": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
       "projectName": "BlazorShared",
-      "projectPath": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
-      "packagesPath": "C:\\Users\\PPlet\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\obj\\",
+      "projectPath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+      "packagesPath": "C:\\Users\\Henrik Hansen\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\PPlet\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Henrik Hansen\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -572,7 +572,6 @@
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -585,13 +584,7 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
-      },
-      "SdkAnalysisLevel": "9.0.300"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -622,7 +615,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
