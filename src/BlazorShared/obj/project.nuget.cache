@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LDRb6tzSP5X+Hx+17skLW7gzsZcB3fxx/mZFCQCK16NYhbBs+jFcCmqCiLV3oqtXzVQebwFpYrHVl3l1Vxx+EQ==",
+  "dgSpecHash": "Gtjjwg/2/zM=",
   "success": true,
-  "projectFilePath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+  "projectFilePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\blazorinputfile\\0.2.0\\blazorinputfile.0.2.0.nupkg.sha512",
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\fluentvalidation\\8.2.3\\fluentvalidation.8.2.3.nupkg.sha512",
@@ -24,8 +24,10 @@
     {
       "code": "NU1604",
       "level": "Warning",
-      "warningLevel": 1,
       "message": "Project dependency BlazorInputFile does not contain an inclusive lower bound. Include a lower bound in the dependency version to ensure consistent restore results.",
+      "projectPath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
       "libraryId": "BlazorInputFile",
       "targetGraphs": [
         ".NETCoreApp,Version=v8.0"

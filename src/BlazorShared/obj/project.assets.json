@@ -554,11 +554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+      "projectUniqueName": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
       "projectName": "BlazorShared",
-      "projectPath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
+      "projectPath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\BlazorShared.csproj",
       "packagesPath": "C:\\Users\\Henrik Hansen\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\obj\\",
+      "outputPath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\BlazorShared\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -584,7 +584,13 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -615,7 +621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

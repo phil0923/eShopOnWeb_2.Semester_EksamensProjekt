@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RoSgX2jpD4Hv9MOQenaHlBsP6Vc9o9XkLaqDvOpIFqjaZ140VyBGOevy7D9v1yu7iMZRwx4iC1N4uuCn31RJaw==",
+  "dgSpecHash": "7E9ARfCzgGg=",
   "success": true,
-  "projectFilePath": "D:\\GitHubRepos\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
+  "projectFilePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\ardalis.result\\10.1.0\\ardalis.result.10.1.0.nupkg.sha512",
@@ -92,8 +92,10 @@
     {
       "code": "NU1602",
       "level": "Warning",
+      "message": "BlazorShared does not provide an inclusive lower bound for dependency BlazorInputFile. BlazorInputFile 0.2.0 was resolved instead.",
+      "projectPath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
       "warningLevel": 1,
-      "message": "BlazorShared does not provide an inclusive lower bound for dependency BlazorInputFile. An approximate best match of BlazorInputFile 0.2.0 was resolved.",
+      "filePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
       "libraryId": "BlazorInputFile",
       "targetGraphs": [
         "net8.0"
