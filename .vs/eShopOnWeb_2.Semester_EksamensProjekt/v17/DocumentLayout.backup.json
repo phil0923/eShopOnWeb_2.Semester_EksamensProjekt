@@ -22,23 +22,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationCore.csproj",
-              "DocumentMoniker": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
-              "ToolTip": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-09-10T09:12:47.027Z"
             },
             {
               "$type": "Document",
@@ -65,10 +53,6 @@
               "WhenOpened": "2025-09-10T09:03:34.963Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Microsoft.PackageDependencyResolution.targets",
@@ -76,9 +60,24 @@
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.304\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAPYAAAAAAAAAAAASwAkBAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
               "WhenOpened": "2025-09-10T09:03:32.106Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationCore.csproj",
+              "DocumentMoniker": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
+              "ToolTip": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApplicationCore\\ApplicationCore.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-10T09:12:47.027Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }

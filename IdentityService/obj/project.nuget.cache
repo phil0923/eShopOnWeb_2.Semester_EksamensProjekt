@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "La1WH9RtOK8=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\IdentityService\\IdentityService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Henrik Hansen\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\Henrik Hansen\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\Henrik Hansen\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.22.1\\microsoft.visualstudio.azure.containers.tools.targets.1.22.1.nupkg.sha512"
+  ],
+  "logs": []
+}
