@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{827E0CD3-B72D-47B6-A68D-7590B98EB39B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "src\ApiGateway\ApiGateway.csproj", "{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +16,25 @@ Global
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|x64.Build.0 = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Debug|x86.Build.0 = Debug|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|x64.ActiveCfg = Release|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|x64.Build.0 = Release|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|x86.ActiveCfg = Release|Any CPU
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3BA8A9B-7D05-49A4-834D-0B6539E27D87} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {02BE6043-6C33-47C4-A5F6-6D4F0F01C454}
