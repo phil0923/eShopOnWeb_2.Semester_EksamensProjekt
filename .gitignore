@@ -1,0 +1,27 @@
+# Ignore Visual Studio cache and build results
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Tt]emp/
+
+# Visual Studio profiler
+*.psess
+*.vsp
+*.vspx
+*.vspscc
+
+# Packages
+*.nupkg
+*.snupkg
+packages/
+
+# Other
+*.dbmdl
+*.jfm

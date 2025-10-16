@@ -1,0 +1,36 @@
+name: .NET CI
+
+on: 
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+
+        - name: Setup .NET SDK
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: "9.0.x"
+
+
+        - name: Restore dependencies 
+          run: dotnet restore
+
+
+        - name: build solution
+          run: dotnet build "eShopOnWeb_2.Semester_EksamensProjekt.sln" --no-restore --configuration Release
+
+
+        - name: Run tests
+          run: dotnet test "Tests/Tests.csproj" --verbosity normal
+        
