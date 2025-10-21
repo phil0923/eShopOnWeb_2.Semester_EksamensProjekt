@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "80MtswYOxX4=",
+  "dgSpecHash": "8L3YOr3uXR8=",
   "success": true,
   "projectFilePath": "C:\\Users\\Henrik Hansen\\source\\repos\\phil0923\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\IdentityService\\IdentityService.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Henrik Hansen\\.nuget\\packages\\ardalis.guardclauses\\5.0.0\\ardalis.guardclauses.5.0.0.nupkg.sha512",
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Henrik Hansen\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
