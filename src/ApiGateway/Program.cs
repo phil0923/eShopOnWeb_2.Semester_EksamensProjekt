@@ -34,7 +34,7 @@ var app = builder.Build();
 app.UseAuthentication();
 app.UseAuthorization();
 
-// 👇 Custom middleware til at sætte X-Client-Id headeren fra JWT claim
+// Custom middleware til at sætte X-Client-Id headeren fra JWT claim
 app.Use(async (context, next) =>
 {
   if (context.User.Identity?.IsAuthenticated == true)
