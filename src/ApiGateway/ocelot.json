@@ -5,8 +5,8 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "localhost",
-          "Port": 5178
+          "Host": "identity",
+          "Port": 80
         }
       ],
       "UpstreamPathTemplate": "/auth/{everything}",
@@ -78,32 +78,6 @@
       },
       "LoadBalancerOptions": {
         "Type": "RoundRobin"
-      }
-    },
-    {
-      "DownstreamPathTemplate": "/api/orders/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5006
-        }
-      ],
-      "UpstreamPathTemplate": "/orders/{everything}",
-      "UpstreamHttpMethod": [
-        "GET",
-        "POST",
-        "PUT"
-      ],
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      },
-      "RateLimitOptions": {
-        "EnableRateLimiting": true,
-        "Period": "1m",
-        "Limit": 10,
-        "ClientIdHeader": "X-Client-Id"
       }
     }
   ],

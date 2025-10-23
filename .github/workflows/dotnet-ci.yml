@@ -1,0 +1,65 @@
+name: .NET CI
+
+on: 
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+
+jobs:
+    build-and-test:
+        runs-on: ubuntu-latest
+        permissions:
+          contents: read
+          packages: write   # <-- Needed to push to GHCR
+
+
+        steps:
+        - name: Checkout code
+          uses: actions/checkout@v3
+
+
+        - name: Setup .NET SDK
+          uses: actions/setup-dotnet@v3
+          with:
+            dotnet-version: "9.0.x"
+        
+
+        - name: Restore dependencies 
+          run: dotnet restore
+
+
+        - name: build solution
+          run: dotnet build "eShopOnWeb_2.Semester_EksamensProjekt.sln" --no-restore --configuration Release
+
+
+        - name: Run tests
+          run: dotnet test "Tests/Tests.csproj" --verbosity normal
+        
+      # Docker Integration Section
+      # -------------------------------
+
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v3
+
+        - name: Build Docker images
+          run: docker compose build
+
+        - name: Start environment (docker compose up)
+          run: docker compose up -d
+
+        - name: Wait for services to initialize
+          run: sleep 40
+
+        # (Optional) Run integration tests against containers
+        # - name: Run integration tests
+        #   run: dotnet test "Tests.Integration/Tests.Integration.csproj" --configuration Release
+
+        - name: Show logs (for debugging)
+          if: failure()
+          run: docker compose logs
+
+        - name: Tear down environment
+          if: always()
+          run: docker compose down -v
