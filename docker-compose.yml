@@ -32,6 +32,24 @@ services:
         condition: service_healthy
     ports:
       - "5200:80"
+    networks:
+      - backend
+
+  apigateway:
+    build: ./ApiGateway
+    container_name: apigateway
+    ports:
+      - "7000:8080"
+    depends_on:
+      - identity
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
 
 volumes:
   sql_data:

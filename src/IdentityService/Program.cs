@@ -10,6 +10,8 @@ using Swashbuckle.AspNetCore.Swagger;
 using IdentityService;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using NoOpEmailSender = IdentityService.NoOpEmailSender;
+using IdentityService.Services.Interfaces;
+using IdentityService.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,10 +24,15 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
 	.AddDefaultTokenProviders();
 
 
-
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IEmailSender, NoOpEmailSender>();
+
+builder.Services.AddScoped<ITokenService, TokenService>();
+
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddScoped<IEmailConfirmationService, EmailConfirmationService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
