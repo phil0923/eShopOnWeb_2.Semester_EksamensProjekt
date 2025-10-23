@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cmkF7nLTQ+E=",
+  "dgSpecHash": "0uosAAYR+XA=",
   "success": true,
-  "projectFilePath": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
+  "projectFilePath": "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\PPlet\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\PPlet\\.nuget\\packages\\ipaddressrange\\6.2.0\\ipaddressrange.6.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj": {}
+    "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj": {
+    "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
+        "projectUniqueName": "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
         "projectName": "ApiGateway",
-        "projectPath": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
+        "projectPath": "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\ApiGateway.csproj",
         "packagesPath": "C:\\Users\\PPlet\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\obj\\",
+        "outputPath": "c:\\Users\\PPlet\\Desktop\\GitRepo\\eShopOnWeb_2.Semester_EksamensProjekt\\src\\ApiGateway\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
