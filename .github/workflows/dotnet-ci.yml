@@ -35,7 +35,7 @@ jobs:
 
 
         - name: Run tests
-          run: dotnet test "Tests/Tests.csproj" --verbosity normal
+          run: dotnet test "src/Tests/Tests.csproj" --verbosity normal
         
       # Docker Integration Section
       # -------------------------------
