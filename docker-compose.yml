@@ -35,17 +35,17 @@ services:
     networks:
       - backend
 
-  apigateway:
-    build: ./ApiGateway
-    container_name: apigateway
-    ports:
-      - "7000:8080"
-    depends_on:
-      - identity
-    environment:
-      - ASPNETCORE_ENVIRONMENT=Development
-    networks:
-      - backend
+  # apigateway:
+  #   build: ./ApiGateway
+  #   container_name: apigateway
+  #   ports:
+  #     - "7000:8080"
+  #   depends_on:
+  #     - identity
+  #   environment:
+  #     - ASPNETCORE_ENVIRONMENT=Development
+  #   networks:
+  #     - backend
 
 networks:
   backend:
