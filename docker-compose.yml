@@ -17,6 +17,8 @@ services:
       start_period: 30s
     volumes:
       - sql_data:/var/opt/mssql
+    networks:
+      -backend
 
   identity:
     build:
@@ -34,7 +36,7 @@ services:
       - "5200:80"
     networks:
       - backend
-
+  
   # apigateway:
   #   build: ./ApiGateway
   #   container_name: apigateway

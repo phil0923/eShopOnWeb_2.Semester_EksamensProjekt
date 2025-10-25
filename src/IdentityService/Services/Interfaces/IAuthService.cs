@@ -8,8 +8,6 @@ namespace IdentityService.Services.Interfaces
 	{
 		Task<ServiceResult> RegisterUserAsync(UserRegistrationDTO userRegistrationDTO, string password);
 
-		Task<ApplicationUser>GetUserFromDBByEmail(string email);
-
 		Task<string> LoginUserAsync(string email, string password);
 
 	}
