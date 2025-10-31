@@ -5,9 +5,7 @@ namespace ProductCatalog.Infrastructure.Data
 {
     public class CatalogContext : DbContext
     {
-        public CatalogContext(DbContextOptions<CatalogContext> options) : base(options)
-        {
-        }
+        public CatalogContext(DbContextOptions<CatalogContext> options) : base(options) { }
 
         public DbSet<CatalogItem> CatalogItems => Set<CatalogItem>();
         public DbSet<CatalogBrand> CatalogBrands => Set<CatalogBrand>();
@@ -17,9 +15,14 @@ namespace ProductCatalog.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.Entity<CatalogItem>().ToTable("Catalog");
             modelBuilder.Entity<CatalogBrand>().ToTable("CatalogBrands");
             modelBuilder.Entity<CatalogType>().ToTable("CatalogTypes");
-            modelBuilder.Entity<CatalogItem>().ToTable("CatalogItems");
+
+            modelBuilder.Entity<CatalogItem>()
+                        .Property(p => p.Price)
+                        .HasColumnType("decimal(18,2)");
+
         }
     }
 }

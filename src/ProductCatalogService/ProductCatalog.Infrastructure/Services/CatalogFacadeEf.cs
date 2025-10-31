@@ -14,16 +14,18 @@ namespace ProductCatalog.Infrastructure.Services
             _db = db;
         }
 
-        public async Task<PagedResult<CatalogItemDto>> GetProductsAsync(
-            int pageIndex, int pageSize,
+            public async Task<PagedResult<CatalogItemDto>> GetProductsAsync(
             int? brandId, int? typeId,
+            int pageIndex, int pageSize,
             CancellationToken ct = default)
         {
+            if (pageIndex < 0) pageIndex = 0;
+            if (pageSize <= 0) pageSize = 10;
 
             var query = _db.CatalogItems.AsNoTracking().AsQueryable();
 
             if (brandId.HasValue) query = query.Where(i => i.CatalogBrandId == brandId.Value);
-            if (typeId.HasValue) query = query.Where(i => i.CatalogTypeId == typeId.Value);
+            if (typeId.HasValue)  query = query.Where(i => i.CatalogTypeId  == typeId.Value);
 
             var total = await query.CountAsync(ct);
 
@@ -45,10 +47,10 @@ namespace ProductCatalog.Infrastructure.Services
 
             return new PagedResult<CatalogItemDto>
             {
-                Items = items,
-                TotalItems = total,
+                Items     = items,
+                TotalItems= total,
                 PageIndex = pageIndex,
-                PageSize = pageSize
+                PageSize  = pageSize
             };
         }
 
