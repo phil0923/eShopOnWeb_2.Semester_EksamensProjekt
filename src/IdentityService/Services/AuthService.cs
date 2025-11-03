@@ -12,45 +12,34 @@ namespace IdentityService.Services
 	public class AuthService : IAuthService
 	{
 		private readonly UserManager<ApplicationUser> _userManager;
-		private readonly IConfiguration _config;
 		private readonly ITokenService _tokenService;
 		private readonly SignInManager<ApplicationUser> _signInManager;
 		private readonly ILogger<AuthService> _logger;
-		public AuthService(UserManager<ApplicationUser> userManager, IConfiguration config, ITokenService tokenService, SignInManager<ApplicationUser> signInManager, ILogger<AuthService> logger)
+		public AuthService(UserManager<ApplicationUser> userManager, ITokenService tokenService, SignInManager<ApplicationUser> signInManager, ILogger<AuthService> logger)
 		{
 			_userManager = userManager;
-			_config = config;
 			_tokenService = tokenService;
 			_signInManager = signInManager;
 			_logger = logger;
 		}
 
-		public async Task<ApplicationUser?> GetUserFromDBByEmail(string email)
+	
+		
+
+		public async Task<string> LoginUserAsync(string email, string password)
 		{
-			var user = await _userManager.FindByEmailAsync(email);
+			ApplicationUser? user = await _userManager.FindByEmailAsync(email);
 
-			if (user == null)
+			if (user==null)
 			{
-				return null;
-			}
-
-			return user;
-		}
-
-		public async Task<string?> LoginUserAsync(string email, string password)
-		{
-			ApplicationUser? user = await GetUserFromDBByEmail(email);
-
-			if(user==null)
-			{
-				return null; 
+				return ""; 
 			}
 
 			var result = await _signInManager.CheckPasswordSignInAsync(user, password, false);
 
 			if (!result.Succeeded)
 			{
-				return null;
+				return "";
 			}
 
 			string token = await _tokenService.GenerateToken(user);
