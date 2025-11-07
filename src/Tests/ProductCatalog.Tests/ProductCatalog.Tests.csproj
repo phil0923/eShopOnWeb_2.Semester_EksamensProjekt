@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
+    <PackageReference Include="FluentAssertions" Version="8.7.1" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="Azure.Core" Version="1.38.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\ProductCatalogService\ProductCatalog.API\ProductCatalog.API.csproj" />
+    <ProjectReference Include="..\..\ProductCatalogService\ProductCatalog.Application\ProductCatalog.Application.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(NuGetPackageRoot)azure.core\1.38.0\lib\net6.0\Azure.Core.dll"
+            Link="Azure.Core.dll"
+            CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>
