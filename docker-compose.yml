@@ -1,14 +1,14 @@
-
+version: '3.4'
 
 services:
-  sqlserver:
+  sqlserver-identity:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver
+    container_name: sqlserver-identity
     environment:
       SA_PASSWORD: "@someThingComplicated1234"
       ACCEPT_EULA: "Y"
     ports:
-      - "1433:1433"
+      - "14330:1433"
     healthcheck:
       test: ["CMD-SHELL", "grep -q 'SQL Server is now ready for client connections' /var/opt/mssql/log/errorlog"]
       interval: 10s
@@ -18,7 +18,7 @@ services:
     volumes:
       - sql_data:/var/opt/mssql
     networks:
-      - backend
+      - eshop_shared
 
   identity:
     build:
@@ -28,14 +28,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
-      - ConnectionStrings__IdentityConnection=Server=sqlserver,1433;Database=IdentityDb;User Id=sa;Password=@someThingComplicated1234;TrustServerCertificate=True;
+      - ConnectionStrings__IdentityConnection=Server=sqlserver-identity,1433;Database=IdentityDb;User Id=sa;Password=@someThingComplicated1234;TrustServerCertificate=True;
     depends_on:
-      sqlserver:
+      sqlserver-identity:
         condition: service_healthy
     ports:
-      - "5200:80"
+      - "5300:80"
+    volumes:
+      - dataprotection_keys:/root/.aspnet/DataProtection-Keys
     networks:
-      - backend
+      - eshop_shared
 
   apigateway:
     build: ./src/ApiGateway
@@ -46,12 +48,16 @@ services:
       - identity
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
+    volumes:
+      - dataprotection_keys:/root/.aspnet/DataProtection-Keys
     networks:
-      - backend
+      - eshop_shared
 
 networks:
-  backend:
-    driver: bridge
+  eshop_shared:
+    external: true
 
 volumes:
   sql_data:
+  dataprotection_keys:
+    external: true

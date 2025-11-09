@@ -5,6 +5,7 @@ using IdentityService.SharedDTOs;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using System.Text.Encodings.Web;
+using IdentityService.Services.Interfaces;
 
 namespace IdentityService.Services
 {
@@ -21,7 +22,7 @@ namespace IdentityService.Services
 			_config = config;
 		}
 
-		public async Task<bool> SendEmail(string email, ApplicationUser user)
+		public async Task<bool> SendEmailAsync(string email, ApplicationUser user)
 		{
 
 			if (user == null)
@@ -32,7 +33,7 @@ namespace IdentityService.Services
 		
 
 			var monolithBaseUrl = _config["baseUrls:webBase"];
-			var callbackUrl = $"{monolithBaseUrl}/Account/ConfirmEmail?userId={user.Id}&code={Uri.EscapeDataString(code)}";
+			var callbackUrl = $"{monolithBaseUrl}/Identity/Account/ConfirmEmail?userId={user.Id}&code={Uri.EscapeDataString(code)}";
 
 			Guard.Against.Null(callbackUrl, nameof(callbackUrl));
 

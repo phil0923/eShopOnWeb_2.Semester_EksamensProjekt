@@ -5,6 +5,6 @@ namespace IdentityService.Services.Interfaces
 {
 	public interface IEmailConfirmationService
 	{
-		Task<bool> SendEmail(string email, ApplicationUser user);
+		Task<bool> SendEmailAsync(string email, ApplicationUser user);
 	}
 }

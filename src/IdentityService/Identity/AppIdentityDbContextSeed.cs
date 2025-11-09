@@ -19,10 +19,6 @@ namespace IdentityService.Identity
 		public static async Task SeedAsync(AppIdentityDbContext identityDbContext, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
 		{
 
-			if (identityDbContext.Database.IsSqlServer())
-			{
-				identityDbContext.Database.Migrate();
-			}
 
 			string[] roles = {
 		  ADMINISTRATORS,
