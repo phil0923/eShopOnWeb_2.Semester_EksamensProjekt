@@ -64,7 +64,7 @@ namespace IdentityService.Services
 				claims: claims,
 				expires: DateTime.UtcNow.AddMinutes(double.Parse(_config["Jwt:ExpiresInMinutes"])),
 				signingCredentials: creds
-
+				
 			);
 
 			var tokenString = new JwtSecurityTokenHandler().WriteToken(token);

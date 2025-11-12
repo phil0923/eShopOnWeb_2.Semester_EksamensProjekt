@@ -3,14 +3,27 @@ using Ocelot.Middleware;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.IdentityModel.JsonWebTokens;
 
 var builder = WebApplication.CreateBuilder(args);
-
+//builder.Services.AddCors(options =>
+//{
+//	options.AddDefaultPolicy(
+		
+//		policy =>
+//		{
+//			policy.WithOrigins("http://localhost:5050")
+//								.AllowAnyHeader()
+//								.AllowAnyMethod();
+//		});
+		
+	 
+//});
 
 // Tilføj Ocelot
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-Console.WriteLine($"[GATEWAY] Key length: {"RH8xbRvSTPfeyXXFN+INbOnsyknoziH6UcsdiOLqqCo=".Length}");
-var key = "MySuperSecureJwtSigningKey1234567890!"; // samme secret som i Auth service
+builder.Configuration.AddJsonFile($"ocelot.{builder.Environment.EnvironmentName}.json", optional: false, reloadOnChange: true);
+
+var key = builder.Configuration["Jwt:Key"]; // samme secret som i Auth service
 var keyBytes = Encoding.UTF8.GetBytes(key); ; // decode to 32 real bytesConsole.WriteLine($"[IDENTITY] Key length: {keyBytes.Length}");
 Console.WriteLine($"[IDENTITY] First bytes: {string.Join(",", keyBytes.Take(10))}");
 builder.Services
@@ -27,37 +40,53 @@ builder.Services
 			ValidateAudience = true,
 			ValidateLifetime = true,
 			ValidateIssuerSigningKey = true,
-			ValidIssuer = "IdentityService",
-			ValidAudience = "eShopClient",
+			ValidIssuer = builder.Configuration["Jwt:Issuer"],
+			ValidAudience = builder.Configuration["Jwt:Audience"],
 			IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
-			ClockSkew = TimeSpan.Zero
+			ClockSkew = TimeSpan.FromSeconds(60)
 		};
 		options.Events = new JwtBearerEvents
 		{
-			OnMessageReceived = ctx =>
-			{
-				if (ctx.Request.Headers.TryGetValue("Authorization", out var header))
-				{
-					var raw = header.ToString();
-					Console.WriteLine($"[GATEWAY RAW HEADER TRUE] => {raw}");
+			//OnMessageReceived = ctx =>
+			//{
+			//	if (ctx.Request.Headers.TryGetValue("Authorization", out var header))
+			//	{
+			//		var raw = header.ToString();
+			//		Console.WriteLine($"[GATEWAY RAW HEADER TRUE] => {raw}");
 
-					if (raw.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
-					{
-						ctx.Token = raw.Substring("Bearer ".Length).Trim();
-						Console.WriteLine($"[GATEWAY CLEAN TOKEN] => {ctx.Token}");
-					}
-					else
-					{
-						ctx.Token = raw.Trim();
-					}
-				}
+			//		if (raw.StartsWith("Bearer ", StringComparison.OrdinalIgnoreCase))
+			//		{
+			//			ctx.Token = raw.Substring("Bearer ".Length).Trim();
+			//			Console.WriteLine($"[GATEWAY CLEAN TOKEN] => {ctx.Token}");
+			//		}
+			//		else
+			//		{
+			//			ctx.Token = raw.Trim();
+			//		}
+			//	}
+			//	return Task.CompletedTask;
+			//},
+
+			OnMessageReceived = context =>
+			{
+				Console.WriteLine("Authorization Header: " + context.Request.Headers["Authorization"]);
 				return Task.CompletedTask;
 			},
 			OnAuthenticationFailed = ctx =>
 			{
-				Console.WriteLine($"[GATEWAY] JWT validation failed: {ctx.Exception.Message}");
+				Console.WriteLine("[GATEWAY] JWT validation failed: " + ctx.Exception.Message);
+				if (ctx.Exception.InnerException != null)
+					Console.WriteLine("Inner: " + ctx.Exception.InnerException.Message);
 				return Task.CompletedTask;
 			},
+
+			//OnAuthenticationFailed = ctx =>
+			//{
+
+			//	Console.WriteLine($"[GATEWAY] JWT validation failed: {ctx.Exception.Message}");
+
+			//	return Task.CompletedTask;
+			//},
 			OnTokenValidated = ctx =>
 			{
 				var claims = ctx.Principal?.Claims
@@ -76,6 +105,8 @@ builder.Services
 builder.Services.AddOcelot();
 
 var app = builder.Build();
+
+//app.UseCors();
 
 app.UseAuthentication();
 app.UseAuthorization();

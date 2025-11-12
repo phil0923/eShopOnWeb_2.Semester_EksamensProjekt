@@ -29,6 +29,9 @@ services:
       - ASPNETCORE_ENVIRONMENT=Docker
       - ASPNETCORE_URLS=http://+:80
       - ConnectionStrings__IdentityConnection=Server=sqlserver-identity,1433;Database=IdentityDb;User Id=sa;Password=@someThingComplicated1234;TrustServerCertificate=True;
+      - Jwt__Key=MySuperSecureJwtSigningKey1234567890!
+      - Jwt__Issuer=IdentityService
+      - Jwt__Audience=eShopClient
     depends_on:
       sqlserver-identity:
         condition: service_healthy
@@ -47,7 +50,10 @@ services:
     depends_on:
       - identity
     environment:
-      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_ENVIRONMENT=Docker
+      - Jwt__Key=MySuperSecureJwtSigningKey1234567890!
+      - Jwt__Issuer=IdentityService
+      - Jwt__Audience=eShopClient
     volumes:
       - dataprotection_keys:/root/.aspnet/DataProtection-Keys
     networks:

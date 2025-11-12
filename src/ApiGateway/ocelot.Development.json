@@ -1,0 +1,128 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/auth/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5178
+        }
+      ],
+      "UpstreamPathTemplate": "/identity/auth/{everything}",
+      "UpstreamHttpMethod": [
+        "POST",
+        "GET"
+      ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "DownstreamHeaderTransform": {
+        "Authorization": "{Authorization}"
+      }
+    },
+    //{
+      // === AccountController Routes ===
+      //  "DownstreamPathTemplate": "/api/account/{everything}",
+      //  "DownstreamScheme": "http",
+      //  "DownstreamHostAndPorts": [
+      //    {
+      //      "Host": "identity",
+      //      "Port": 80
+      //    }
+      //  ],
+      //  "UpstreamPathTemplate": "/identity/account/{everything}",
+      //  "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      //  "DownstreamHeaderTransform": {
+      //    "Authorization": "{Authorization}"
+      //  }
+      //},
+    {
+      "DownstreamPathTemplate": "/api/account/{everything}",
+      "UpstreamPathTemplate": "/identity/account/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5178
+        }
+      ],
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
+      "RouteIsCaseSensitive": false,
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
+    },
+      {
+        "DownstreamPathTemplate": "/api/products/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5002
+          },
+          {
+            "Host": "localhost",
+            "Port": 5003
+          }
+        ],
+        "UpstreamPathTemplate": "/products/{everything}",
+        "UpstreamHttpMethod": [
+          "GET",
+          "POST",
+          "PUT",
+          "DELETE"
+        ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "LoadBalancerOptions": {
+          "Type": "RoundRobin"
+        },
+        "RateLimitOptions": {
+          "EnableRateLimiting": true,
+          "Period": "1m",
+          "Limit": 20,
+          "ClientIdHeader": "X-Client-Id"
+        }
+      },
+      {
+        "DownstreamPathTemplate": "/api/warehouse/{everything}",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [
+          {
+            "Host": "localhost",
+            "Port": 5004
+          },
+          {
+            "Host": "localhost",
+            "Port": 5005
+          }
+        ],
+        "UpstreamPathTemplate": "/warehouse/{everything}",
+        "UpstreamHttpMethod": [
+          "GET",
+          "POST",
+          "PUT"
+        ],
+        "AuthenticationOptions": {
+          "AuthenticationProviderKey": "Bearer",
+          "AllowedScopes": []
+        },
+        "LoadBalancerOptions": {
+          "Type": "RoundRobin"
+        }
+      }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5050",
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "Too many requests. Try again later.",
+      "HttpStatusCode": 429
+    }
+  }
+}
