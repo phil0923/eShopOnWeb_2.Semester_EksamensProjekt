@@ -30,7 +30,6 @@ namespace IdentityService.Services
 			// Generate email confirmation link
 			var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
 
-		
 
 			var monolithBaseUrl = _config["baseUrls:webBase"];
 			var callbackUrl = $"{monolithBaseUrl}/Identity/Account/ConfirmEmail?userId={user.Id}&code={Uri.EscapeDataString(code)}";

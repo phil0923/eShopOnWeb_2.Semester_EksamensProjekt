@@ -27,10 +27,7 @@ namespace IdentityService.Services
 		public async Task<string> GenerateToken(ApplicationUser user)
 		{
 			
-
 			var roles = await _userManager.GetRolesAsync(user);
-
-
 
 			var claims = new List<Claim>()
 			{
@@ -42,7 +39,6 @@ namespace IdentityService.Services
 
 			 };
 
-
 			foreach (var role in roles)
 			{
 				claims.Add(new Claim(ClaimTypes.Role, role));
@@ -50,7 +46,7 @@ namespace IdentityService.Services
 			}
 
 			var jwtKey = _config["Jwt:Key"]
-	?? throw new InvalidOperationException("JWT Key is missing in configuration.");
+			?? throw new InvalidOperationException("JWT Key is missing in configuration.");
 
 
 			var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
@@ -64,7 +60,6 @@ namespace IdentityService.Services
 				claims: claims,
 				expires: DateTime.UtcNow.AddMinutes(double.Parse(_config["Jwt:ExpiresInMinutes"])),
 				signingCredentials: creds
-				
 			);
 
 			var tokenString = new JwtSecurityTokenHandler().WriteToken(token);

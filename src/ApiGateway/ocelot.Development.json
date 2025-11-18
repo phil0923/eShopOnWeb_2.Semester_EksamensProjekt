@@ -49,11 +49,7 @@
         }
       ],
       "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE" ],
-      "RouteIsCaseSensitive": false,
-      "AuthenticationOptions": {
-        "AuthenticationProviderKey": "Bearer",
-        "AllowedScopes": []
-      }
+      "RouteIsCaseSensitive": false
     },
       {
         "DownstreamPathTemplate": "/api/products/{everything}",
