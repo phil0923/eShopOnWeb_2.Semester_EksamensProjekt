@@ -19,19 +19,11 @@ namespace IdentityService.Controllers
 	[ApiController]
 	public class AuthController : ControllerBase
 	{
-		private readonly IConfiguration _config;
-		private readonly UserManager<ApplicationUser> _userManager;
-		private readonly SignInManager<ApplicationUser> _signInManager;
-		private readonly IEmailSender _emailSender;
 		private readonly ILogger<AuthController> _logger;
 		private readonly IAuthService _authService;
 		private readonly IEmailConfirmationService _emailConfirmationService;
-		public AuthController(IConfiguration config, UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IEmailSender emailSender, ILogger<AuthController> logger, IAuthService authService, IEmailConfirmationService emailConfirmationService)
+		public AuthController(ILogger<AuthController> logger, IAuthService authService, IEmailConfirmationService emailConfirmationService)
 		{
-			_config = config;
-			_userManager = userManager;
-			_signInManager = signInManager;
-			_emailSender = emailSender;
 			_logger = logger;
 			_authService = authService;
 			_emailConfirmationService = emailConfirmationService;
@@ -42,11 +34,13 @@ namespace IdentityService.Controllers
 		{
 
 			var tokenString= await _authService.LoginUserAsync(userLoginDTO.Email, userLoginDTO.Password);
+			
+			_logger.LogInformation($"Generated token: {tokenString}");
 
-			if (tokenString == null) 
+			if (string.IsNullOrEmpty(tokenString))
 				return Unauthorized("Invalid email or password");
 
-			return Ok(new { token = tokenString });
+			return Ok(new LoginResponseDTO { Token = tokenString, IsLockedOut=false,RequiresTwoFactor=false,Succeeded=true});
 		}
 
 
@@ -74,7 +68,7 @@ namespace IdentityService.Controllers
 
 			if (result.User != null && userRegistrationDTO!=null)
 			{
-				await _emailConfirmationService.SendEmail(userRegistrationDTO.Email, result.User);
+				await _emailConfirmationService.SendEmailAsync(userRegistrationDTO.Email, result.User);
 				
 				tokenString=await _authService.LoginUserAsync(userRegistrationDTO.Email, userRegistrationDTO.Password);
 			}
@@ -83,9 +77,9 @@ namespace IdentityService.Controllers
 			if (tokenString == null)
 				return Unauthorized("Invalid email or password");
 
-			return Ok(new { token = tokenString,
-				success = true,
-				message = "Registration successful. Please confirm your email.",
+			return Ok(new RegisterResponseDTO { Token = tokenString,
+				Success = true,
+				Message = "Registration successful. Please confirm your email.",
 			});
 
 

@@ -7,6 +7,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Unicode;
 
 namespace IdentityService.Services
 {
@@ -26,19 +27,17 @@ namespace IdentityService.Services
 		public async Task<string> GenerateToken(ApplicationUser user)
 		{
 			
-
 			var roles = await _userManager.GetRolesAsync(user);
-
-
 
 			var claims = new List<Claim>()
 			{
-
+				new Claim(ClaimTypes.Name, user.UserName ?? user.Email ?? string.Empty),
+				new Claim(ClaimTypes.NameIdentifier, user.Id),
 				new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
 				new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
+				new Claim(ClaimTypes.Email, user.Email ?? string.Empty)
 
 			 };
-
 
 			foreach (var role in roles)
 			{
@@ -46,8 +45,13 @@ namespace IdentityService.Services
 
 			}
 
+			var jwtKey = _config["Jwt:Key"]
+			?? throw new InvalidOperationException("JWT Key is missing in configuration.");
 
-			var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
+
+			var keyBytes = Encoding.UTF8.GetBytes(jwtKey);
+
+			var key = new SymmetricSecurityKey(keyBytes);
 			var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
 			var token = new JwtSecurityToken(

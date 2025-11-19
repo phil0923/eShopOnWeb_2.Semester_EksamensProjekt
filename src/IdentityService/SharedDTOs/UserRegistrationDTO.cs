@@ -1,10 +1,14 @@
-﻿namespace IdentityService.SharedDTOs
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace IdentityService.SharedDTOs
 {
 	public class UserRegistrationDTO
 	{
-		public string Email { get; set; }
+		[Required]
+		public required string Email { get; set; }
 
-		public string Password { get; set; }
+		[Required]
+		public required string Password { get; set; }
 
 	}
 }
