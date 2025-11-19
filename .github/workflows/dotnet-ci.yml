@@ -25,6 +25,15 @@ jobs:
           with:
             dotnet-version: "9.0.x"
         
+        - name: Create shared external network
+          run: |
+            docker network create eshop_shared || echo "Network already exists"
+
+        
+        - name: Create shared dataprotection_keys volume 
+          run: |
+            docker volume create dataprotection_keys || echo "Volume already exists"
+
 
         - name: Restore dependencies 
           run: dotnet restore
